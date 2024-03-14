@@ -1,7 +1,7 @@
 
 import os
 import requests
-#import discord
+import discord
 
 def ChatGPT(prompt):
 
@@ -61,52 +61,60 @@ def ChatGPT(prompt):
         return f"An unexpected error occurred: {e}"
 
     
-
-
-
+    
 #=================================================================
-try:
+    
 
-    intents = discord.Intents.default()
-    intents.message_content = True
+intents = discord.Intents.default()
+intents.message_content = True
 
-    client = discord.Client(intents=intents)
-
-
-   #show loggin message
-    @client.event
-    async def on_ready():
-           print('We have logged in as {0.user}'.format(client))
+client = discord.Client(intents=intents)
 
 
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            return
-        
-        # Check if the message content starts with ">"
-        if message.content.startswith('>'):
+#show loggin message
+@client.event
+async def on_ready():
+        print('We have logged in as {0.user}'.format(client))
 
-            # Extract the sentence by removing the leading ">" character
-            sentence = message.content[1:]
 
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    
+    # Check if the message content starts with ">"
+    if message.content.startswith('>'):
+
+        # Extract the sentence by removing the leading ">" character
+        sentence = message.content[1:]
+
+        sentence += " and give me a response that is under 2000 characters"
+
+        try:
+                
             # Generate a response using the ChatGPT language model
             answer = ChatGPT(sentence)
 
             # Send the generated response to the Discord channel
             await message.channel.send(answer)
 
-        else:
-            await message.channel.send("Every prompt need to start with greater than sign >. Try again")
+        except requests.HTTPError as e:
+
+            if e.response.status_code == 400:
+                await message.channel.send("Error: The user prompt exceeds the maximum tokens allowed.")
+            else:
+                await message.channel.send(f"An HTTP error occurred: {e.response.status_code}")
+
+        except discord.errors.HTTPException as e:
+            await message.channel.send(f"Discord HTTP Exception: {e}")
+
+        except Exception as e:
+            await message.channel.send(f"An unexpected error occurred: {e}")
+
+    else:
+        await message.channel.send("Every prompt need to start with a greater than sign '>'. Try again")
 
 
-    token = os.environ["DISCORDBOTKEY"]
-    
-    client.run(token)
+token = os.environ["DISCORDBOTKEY"]
 
-
-except Exception as e:
-       print(f"ERROR => {str(e)}")
-    
-finally:
-    client.run(token)
+client.run(token)
