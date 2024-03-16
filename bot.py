@@ -57,6 +57,7 @@ def ChatGPT(prompt):
     
     except requests.RequestException as e:
         return f"A request exception occurred: {e}"
+    
     except Exception as e:
         return f"An unexpected error occurred: {e}"
 
@@ -106,7 +107,7 @@ async def on_message(message):
                 await message.channel.send(f"An HTTP error occurred: {e.response.status_code}")
 
         except discord.errors.HTTPException as e:
-            await message.channel.send(f"Discord HTTP Exception: {e}")
+            await message.channel.send(f"Discord HTTP Exception the response exceed 2000 characters try again with a different prompt: {e}")
 
         except Exception as e:
             await message.channel.send(f"An unexpected error occurred: {e}")
