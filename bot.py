@@ -89,8 +89,6 @@ async def on_message(message):
         # Extract the sentence by removing the leading ">" character
         sentence = message.content[1:]
 
-        sentence += " and give me a response that is under 2000 characters"
-
         try:
                 
             # Generate a response using the ChatGPT language model
