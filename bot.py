@@ -17,6 +17,8 @@ endpoint = 'https://api.openai.com/v1/chat/completions'
 # openai model
 model = "gpt-4o"
 
+max_tokens = 600
+
 
 
 
@@ -48,7 +50,7 @@ def discord_action():
             try:
                     
                 # Generate a response using the ChatGPT language model
-                answer = go.ChatGPT(sentence, endpoint, model, 600, openaikey)
+                answer = go.ChatGPT(sentence, endpoint, model, max_tokens, openaikey)
 
                 # Send the generated response to the Discord channel
                 await message.channel.send(answer)
