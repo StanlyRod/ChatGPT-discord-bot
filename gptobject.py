@@ -1,16 +1,12 @@
 import requests
 
-def ChatGPT(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
+
+# Define a function to make a request to the ChatGPT API.
+# Takes a prompt (string), endpoint (string), model (string), max_tokens (int), and openaikey (string) as inputs.
+def chatgpt(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
 
 
     try:
-
-        # #get ChatGPT API KEY from the environmental variable
-        # openaikey = os.environ["OPENAIKEY"]
-
-        #chatgpt endpoint
-        # url = 'https://api.openai.com/v1/chat/completions'
-
 
         headers = {
                 'Content-Type': 'application/json',
