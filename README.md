@@ -37,6 +37,7 @@ pip install -r requirements.txt
 
 4 Set Environment Variables
 - Set the OPENAIKEY and DISCORDBOTKEY environment variables in your system.
+
 Linux/Mac:
 ```bash
 export OPENAIKEY="your-openai-api-key"
