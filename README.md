@@ -26,6 +26,13 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
   
 ![bot name](https://github.com/user-attachments/assets/e743af70-aae4-4b6b-aaf1-c24dac1e69f3)
 
+4. In the "Bot" tab, assign administrator permissions to the bot and obtain its token key.
+
+![bot permissions](https://github.com/user-attachments/assets/ce82746e-c872-4d22-90ca-4ddc9d2cb4b4)
+
+![get bot token ](https://github.com/user-attachments/assets/3809cef5-cc90-424c-87d4-abbc899d5ebe)
+
+
 ### Create a Bot User
 
 1. In your new application's settings, go to the "Bot" tab.
