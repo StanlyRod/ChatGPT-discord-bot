@@ -40,6 +40,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 ![oauth permissions](https://github.com/user-attachments/assets/6e67e188-02f5-4bd4-8b28-7eb734c30c09)
 
 6 In the OAuth tab, copy the generated url.
+You will use the URL to invite the bot to a Discord server.
 
 1. Copy the Generated URL:
 
