@@ -23,7 +23,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 - or follow this instructions https://discordpy.readthedocs.io/en/stable/discord.html
 2. Click on the "New Application" button.
 3. Give your application a name and click "Create".
-
+![bot name](https://github.com/user-attachments/assets/e743af70-aae4-4b6b-aaf1-c24dac1e69f3)
 
 ### Create a Bot User
 
