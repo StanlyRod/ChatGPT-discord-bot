@@ -20,7 +20,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 ### Create a New Discord Application and get bot token key
 
 1. Go to the Discord Developer Portal. https://discord.com/developers/applications?form=MG0AV3 
-or follow this instructions https://discordpy.readthedocs.io/en/stable/discord.html
+   - or follow this instructions https://discordpy.readthedocs.io/en/stable/discord.html
 2. Click on the "New Application" button.
 3. Give your application a name and click "Create".
 
