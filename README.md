@@ -32,14 +32,18 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 
 ![get bot token ](https://github.com/user-attachments/assets/3809cef5-cc90-424c-87d4-abbc899d5ebe)
 
+5. Enable all the Privileged Gateway Intents under the "Bot" tab.
+
+![privileged intents](https://github.com/user-attachments/assets/99d75ae0-b041-401b-bc2b-0ba1fcea8f14)
+
 ### Note
 > ⚠️ **When a bot is given Administrator permissions in Discord, it gains access to almost all actions within the server.**
 
-5 In the OAuth tab, enable the "bot" checkbox and select the "administrator" checkbox under bot permissions.
+6. In the OAuth tab, enable the "bot" checkbox and select the "administrator" checkbox under bot permissions.
 
 ![oauth permissions](https://github.com/user-attachments/assets/6e67e188-02f5-4bd4-8b28-7eb734c30c09)
 
-6 In the OAuth tab, copy the generated url.
+7. In the OAuth tab, copy the generated url.
 
 You will use the URL to invite the bot to a Discord server.
 
