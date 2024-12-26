@@ -12,7 +12,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 
 ### Requirements
 
-- Python 3.8 or higher 
+- Python 3.13 or higher 
 - Discord bot token
 - OpenAI API key
 
