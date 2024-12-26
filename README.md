@@ -73,7 +73,7 @@ You will use the URL to invite the bot to a Discord server.
 
 1 Clone the Repository
 ```bash
-git clone https://github.com/your-username/discord-chatgpt-bot.git
+git clone https://github.com/StanlyRod/ChatGPT-discord-bot.git
 cd discord-chatgpt-bot
 ```
 
