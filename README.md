@@ -74,7 +74,7 @@ You will use the URL to invite the bot to a Discord server.
 1 Clone the Repository
 ```bash
 git clone https://github.com/StanlyRod/ChatGPT-discord-bot.git
-cd discord-chatgpt-bot
+cd ChatGPT-discord-bot
 ```
 
 2 Set Up a Virtual Environment (Optional but Recommended)
