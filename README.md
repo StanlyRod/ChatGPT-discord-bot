@@ -69,15 +69,6 @@ You will use the URL to invite the bot to a Discord server.
 - The bot should appear offline until its code is running and it is connected to Discord.
 
 
-
-### Create a Bot User
-
-1. In your new application's settings, go to the "Bot" tab.
-
-2. Click "Add Bot" and confirm.
-
-3. Note down the token shown on this page, as you will need it later.
-
 ### Installation
 
 1 Clone the Repository
