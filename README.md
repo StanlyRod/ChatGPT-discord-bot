@@ -16,6 +16,14 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 - Discord bot token
 - OpenAI API key
 
+### Note
+- > ⚠️ **Check your Python version: Run python --version to check the version of Python you're using.**
+- > ⚠️ **If using Python 3.13 or above: You'll need to find an alternative library for audio manipulation.**
+- > ⚠️ **If using Python 3.11 or 3.12: You can still use audioop, but consider migrating to an alternative library.**
+- > ⚠️ **Install audioop-lts: For projects like discord.py that require audioop on newer Python versions, you can install the audioop-lts package:**
+```bash
+pip install audioop-lts
+```
 
 ### Create a New Discord Application and get bot token key
 
