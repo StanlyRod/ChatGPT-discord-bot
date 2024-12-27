@@ -147,3 +147,6 @@ Try again." This helps users quickly understand how to interact with the bot eff
 > This limit includes all text, emojis, and formatting (e.g., Markdown or embeds). If the ChatGPT API response exceeds 2,000 characters, the bot will raise a discord.errors.HTTPException and send the following message to the Discord channel:
 
 "Discord HTTP Exception: The response exceeds 2,000 characters. Try again with a shorter prompt."**
+
+![Screenshot 2024-12-27 171249](https://github.com/user-attachments/assets/33552f8e-7e29-4b4c-bee6-9d4daaf89700)
+
