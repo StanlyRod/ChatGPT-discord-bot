@@ -136,7 +136,7 @@ python bot.py
 ### Note
 > ⚠️ **Use greater than symbol '>'**
 3. Make sure to use the greater than symbol '>' before any prompt,
-if the bot sees a message without the > prefix, it responds with a reminder:
+if the bot sees a prompt without the > prefix, it responds with a reminder:
 "Every prompt needs to start with a greater than sign '>'.
 Try again." This helps users quickly understand how to interact with the bot effectively.
 
