@@ -141,3 +141,9 @@ if the bot sees a prompt without the > prefix, it responds with a reminder:
 Try again." This helps users quickly understand how to interact with the bot effectively.
 
 ![Screenshot 2024-12-27 142958](https://github.com/user-attachments/assets/f28fb175-7506-45e0-b9e1-7e6cc7983d4b)
+
+### Note
+> ⚠️ **When using the Discord API to send messages to a channel, it is crucial to be specific in your prompt and token usage to avoid exceeding Discord's 2,000-character limit per message.
+> This limit includes all text, emojis, and formatting (e.g., Markdown or embeds). If the ChatGPT API response exceeds 2,000 characters, the bot will raise a discord.errors.HTTPException and send the following message to the Discord channel:
+
+"Discord HTTP Exception: The response exceeds 2,000 characters. Try again with a shorter prompt."**
