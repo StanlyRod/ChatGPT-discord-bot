@@ -121,7 +121,7 @@ $env:DISCORDBOTKEY="your-discord-bot-key"
 
 ### Usage
 
-1. Create a python virtual environment, activate the virtual environment, install all the requirements and clone the repository.
+1. Create a python virtual environment, activate the virtual environment, install all the required dependencies and clone the repository.
 
 ![Screenshot 2024-12-27 141142](https://github.com/user-attachments/assets/9333ba3a-0094-447f-a0f8-7d496c5f4ca1)
 
