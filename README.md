@@ -119,7 +119,17 @@ $env:OPENAIKEY="your-openai-api-key"
 $env:DISCORDBOTKEY="your-discord-bot-key"
 ```
 
-5 Run the bot
+### Usage
+
+1. Create a python virtual environment, activate the virtual environment, install all the requirements and clone the repository.
+
+![Screenshot 2024-12-27 141142](https://github.com/user-attachments/assets/9333ba3a-0094-447f-a0f8-7d496c5f4ca1)
+
+2. Run the bot
+
 ```bash
 python bot.py
 ```
+![Screenshot 2024-12-27 142403](https://github.com/user-attachments/assets/546aa95e-b21c-4e69-a2b7-b28493be80e2)
+
+
