@@ -1,15 +1,25 @@
-
 import os
+import sys
 import requests
 import discord
 import gptobject as go
 
 
-# get ChatGPT API KEY from the environmental variable
-openaikey = os.environ["OPENAIKEY"]
 
-# get discord bot api key from the environmental variable
-discordbotkey = os.environ["DISCORDBOTKEY"]
+# Get ChatGPT API KEY from the environmental variable
+try:
+    openaikey = os.environ["OPENAIKEY"]
+except KeyError as kee:
+    print(f"Error: The environment variable 'OPENAIKEY' is not set. Please set it and try again. {kee}")
+    sys.exit()
+
+#Get Discord bot API key from the environmental variable
+try:
+    discordbotkey = os.environ["DISCORDBOTKEY"]
+except KeyError as ke:
+    print(f"Error: The environment variable 'DISCORDBOTKEY' is not set. Please set it and try again. {ke}")
+    sys.exit()
+
 
 # openai endpoint
 endpoint = 'https://api.openai.com/v1/chat/completions'
@@ -19,7 +29,6 @@ model = "gpt-4o"
 
 #response tokens
 max_tokens = 600
-
 
 
 
@@ -79,6 +88,8 @@ def discord_action():
 
 def main():
     discord_action()
+    
+
 
     
 if __name__ == "__main__":

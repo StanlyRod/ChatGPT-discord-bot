@@ -22,6 +22,10 @@ def chatgpt(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
         response = requests.post(endpoint, headers=headers, json=data)
         re = response.json()
 
+        #if error found in openai api response then return error message
+        if "error" in re:
+            return f"Error with OPENAI Api: {re["error"]["message"]}"
+
         #get the answer from the json response
         fullResponse = re['choices'][0]['message']['content']
 
@@ -53,3 +57,4 @@ def chatgpt(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
     
     except Exception as e:
         return f"An unexpected error occurred: {e}"
+
