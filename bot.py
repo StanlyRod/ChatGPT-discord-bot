@@ -13,7 +13,7 @@ except KeyError as kee:
     print(f"Error: The environment variable 'OPENAIKEY' is not set. Please set it and try again. {kee}")
     sys.exit()
 
-#Get Discord bot API key from the environmental variable
+#Get Discord bot token key from the environmental variable
 try:
     discordbotkey = os.environ["DISCORDBOTKEY"]
 except KeyError as ke:

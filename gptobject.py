@@ -27,9 +27,9 @@ def chatgpt(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
             return f"Error with OPENAI Api: {re["error"]["message"]}"
 
         #get the answer from the json response
-        fullResponse = re['choices'][0]['message']['content']
+        full_response = re['choices'][0]['message']['content']
 
-        return fullResponse
+        return full_response
     
     except requests.HTTPError as e:
         errorMessage = ""
