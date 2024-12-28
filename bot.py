@@ -73,6 +73,9 @@ def discord_action():
                     await message.channel.send(f"An HTTP error occurred: {e.response.status_code}")
 
             except discord.errors.HTTPException as e:
+
+                if e.status_code == 401:
+                    print(f"Unauthorized exception error: The token might be invalid or expired. {e}")
                 await message.channel.send(f"Discord HTTP Exception the response exceed 2000 characters try again with a different prompt: {e}")
 
             except Exception as e:
@@ -81,7 +84,12 @@ def discord_action():
         else:
             await message.channel.send("Every prompt need to start with a greater than sign '>'. Try again")
 
-    client.run(discordbotkey)
+    try:
+        client.run(discordbotkey)
+    except discord.errors.LoginFailure as e:
+        print(f"Login failed: {e}")
+        print("Please check the Discord bot token. Ensure it's valid and correctly set in the environment variables.")
+        sys.exit(1)
 
 
 
