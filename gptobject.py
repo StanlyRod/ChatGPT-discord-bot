@@ -24,7 +24,7 @@ def chatgpt(prompt:str, endpoint:str, model:str, max_tokens:int, openaikey:str):
 
         #if error found in openai api response then return error message
         if "error" in re:
-            return f"Error with OPENAI Api: {re["error"]["message"]}"
+            return f"Error with OPENAI Api: {re['error']['message']}"
 
         #get the answer from the json response
         full_response = re['choices'][0]['message']['content']
