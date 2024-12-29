@@ -158,5 +158,16 @@ Try again." This helps users quickly understand how to interact with the bot eff
 Run the bot in a docker container
 
 ### Note
-> ⚠️ ** To create a Docker image, ensure you use the Dockerfile located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
-> All the dependencies in the requirements.txt file in docker folder are compatible with the python:3.11-bullseye Docker image.**
+> ⚠️ ** To create a Docker image, ensure you use the Docker file located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
+> All the dependencies in the requirements.txt file in the docker folder are compatible with the python:3.11-bullseye Docker image.**
+
+> ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder into a separate directory.**
+
+1. open the terminal navigate to the new isolated directory and run the bash code to create a docker image.
+```bash
+docker build -t discordbotimage .
+```
+
+2. Run the docker image and provide the environment variables names with the openai api key and the discord bot token.
+
+![rundockerimg](https://github.com/user-attachments/assets/beb6dfa6-d4a8-44d6-82f0-78f81d516586)
