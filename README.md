@@ -153,5 +153,6 @@ Try again." This helps users quickly understand how to interact with the bot eff
 ## Docker
 
 
-![dockericon](https://github.com/user-attachments/assets/d6205559-bdb9-4f42-9608-3a1f91c212a1)
+![dockerlogo](https://github.com/user-attachments/assets/4d6ede6e-9f44-404e-862c-1d47d48e8a7d)
+
 
