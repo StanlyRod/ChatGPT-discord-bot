@@ -1,0 +1,14 @@
+# Use the specified Python image as the base
+FROM python:3.11-bullseye
+
+# Create a directory named discordbotapp
+WORKDIR /discordbotapp
+
+# Copy files and directories to the discordbotapp directory in the container
+COPY . /discordbotapp
+
+# Install the required libraries from the requirements.txt file
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set the default command to run the Python script
+CMD ["python3", "bot.py"]
