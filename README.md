@@ -150,3 +150,8 @@ Try again." This helps users quickly understand how to interact with the bot eff
 
 ![Screenshot 2024-12-27 171249](https://github.com/user-attachments/assets/33552f8e-7e29-4b4c-bee6-9d4daaf89700)
 
+## Docker
+
+
+![dockericon](https://github.com/user-attachments/assets/d6205559-bdb9-4f42-9608-3a1f91c212a1)
+
