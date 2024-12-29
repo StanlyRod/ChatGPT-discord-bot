@@ -155,4 +155,8 @@ Try again." This helps users quickly understand how to interact with the bot eff
 
 ![dockerlogo](https://github.com/user-attachments/assets/4d6ede6e-9f44-404e-862c-1d47d48e8a7d)
 
+Run the bot in a docker container
 
+### Note
+> ⚠️ ** To create a Docker image, ensure you use the Dockerfile located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
+> All the dependencies in the requirements.txt file in docker folder are compatible with the python:3.11-bullseye Docker image.**
