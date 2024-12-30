@@ -16,7 +16,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 - Discord bot token
 - OpenAI API key
 
-### Note
+### Important Notes
 - > ⚠️ **Check your Python version: Run python --version to check the version of Python you're using.**
 - > ⚠️ **If using Python 3.13 or above: You'll need to find an alternative library for audio manipulation.**
 - > ⚠️ **If using Python 3.11 or 3.12: You can still use audioop, but consider migrating to an alternative library.**
@@ -44,7 +44,7 @@ pip install audioop-lts
 
 ![privileged intents](https://github.com/user-attachments/assets/99d75ae0-b041-401b-bc2b-0ba1fcea8f14)
 
-### Note
+### Important Notes
 > ⚠️ **When a bot is given Administrator permissions in Discord, it gains access to almost all actions within the server.**
 
 6. In the OAuth tab, enable the "bot" checkbox and select the "administrator" checkbox under bot permissions.
@@ -133,7 +133,7 @@ python bot.py
 ![Screenshot 2024-12-27 142403](https://github.com/user-attachments/assets/546aa95e-b21c-4e69-a2b7-b28493be80e2)
 
 
-### Note
+### Important Notes
 > ⚠️ **Use greater than symbol '>'**
 3. Make sure to use the greater than symbol '>' before any prompt,
 if the bot sees a prompt without the > prefix, it responds with a reminder:
@@ -142,7 +142,7 @@ Try again." This helps users quickly understand how to interact with the bot eff
 
 ![Screenshot 2024-12-27 142958](https://github.com/user-attachments/assets/f28fb175-7506-45e0-b9e1-7e6cc7983d4b)
 
-### Note
+### Important Notes
 > ⚠️ **When using the Discord API to send messages to a channel, it is crucial to be specific in your prompt and token usage to avoid exceeding Discord's 2,000-character limit per message.
 > This limit includes all text, emojis, and formatting (e.g., Markdown or embeds). If the ChatGPT API response exceeds 2,000 characters, the bot will raise a discord.errors.HTTPException and send the following message to the Discord channel:
 
@@ -157,7 +157,13 @@ Try again." This helps users quickly understand how to interact with the bot eff
 
 Run the bot in a docker container
 
-### Note
+### Requirements
+
+- Installation of docker desktop
+- Discord bot token
+- OpenAI API key
+
+### Important Notes
 > ⚠️ ** To create a Docker image, ensure you use the Docker file located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
 > All the dependencies in the requirements.txt file in the docker folder are compatible with the python:3.11-bullseye Docker image.**
 
