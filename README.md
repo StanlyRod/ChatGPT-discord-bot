@@ -83,24 +83,41 @@ You will use the URL to invite the bot to a Discord server.
 
 ### Installation
 
-1 Clone the Repository
+1 Clone or download the repository
 ```bash
 git clone https://github.com/StanlyRod/ChatGPT-discord-bot.git
 cd ChatGPT-discord-bot
 ```
 
 2 Set Up a Virtual Environment (Optional but Recommended)
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3 Install Required Libraries
+3 Activate the virtual environment
+
+On Windows
+```bash
+venv\Scripts\activate
+```
+
+On Linux
+```bash
+source myenv/bin/activate
+```
+
+On macOS
+```bash
+source myenv/bin/activate
+```
+
+4 Install Required Libraries
 ```bash
 pip install -r requirements.txt
 ```
 
-4 Set Environment Variables
+5 Set Environment Variables
 - Set the OPENAIKEY and DISCORDBOTKEY environmental variables, with their api key and token value in your system and restart your computer.
 
 Linux/Mac:
