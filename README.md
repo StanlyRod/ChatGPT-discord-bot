@@ -8,7 +8,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 - Responds to user prompts in Discord channels using OpenAI's GPT-4 model.
 - Handles errors gracefully, including OpenAI API errors and Discord message length limits.
 - Provides detailed error messages for common issues like exceeding token limits or rate limits.
-- Easy integration with environmental variables for secure API key management.
+- Easy integration with environmental variables and Docker container for secure API key management.
 
 ### Requirements
 
