@@ -95,7 +95,13 @@ cd ChatGPT-discord-bot
 python -m venv venv
 ```
 
-3 Activate the virtual environment
+3 Copy all the required files into the new virtual environment venv folder (bot.py, gptobject.py and requirements.txt).
+
+```bash
+cp bot.py gptobject.py requirements.txt venv/
+```
+
+4 Activate the virtual environment
 
 On Windows
 ```bash
@@ -112,12 +118,12 @@ On macOS
 source myenv/bin/activate
 ```
 
-4 Install Required Libraries
+5 Install the required dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-5 Set Environment Variables
+6 Set Environment Variables
 - Set the OPENAIKEY and DISCORDBOTKEY environmental variables, with their api key and token value in your system and restart your computer.
 
 Linux/Mac:
@@ -138,16 +144,15 @@ $env:DISCORDBOTKEY="your-discord-bot-key"
 
 ### Usage
 
-1. Create a python virtual environment, activate the virtual environment, install all the required dependencies and clone the repository.
-
-![Screenshot 2024-12-27 141142](https://github.com/user-attachments/assets/9333ba3a-0094-447f-a0f8-7d496c5f4ca1)
+1. Create a python virtual environment, activate the virtual environment, install all the required dependencies.
 
 2. Run the bot
 
 ```bash
 python bot.py
 ```
-![Screenshot 2024-12-27 142403](https://github.com/user-attachments/assets/546aa95e-b21c-4e69-a2b7-b28493be80e2)
+![run bot](https://github.com/user-attachments/assets/41d80bca-a2a6-459f-aee4-3b91597e7d53)
+
 
 
 ### Important Notes
