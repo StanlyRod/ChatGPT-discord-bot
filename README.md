@@ -209,6 +209,7 @@ docker build -t discordbotimage .
 
 <div style="background-color: #eaffea; border-left: 6px solid #4CAF50; padding: 10px; margin: 10px 0;">
 
-**Did you know?** You can use the `os.environ` method to access environment variables directly in Python. Just make sure the variable is set properly in your system.
+- Tokens Response: To control the ChatGPT response, adjust the token limit specified in the code.
+- ChatGPT Model: By default, the code uses the gpt-4o model, which can be changed to your preferred model.
 
 </div>
