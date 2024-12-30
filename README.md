@@ -110,12 +110,12 @@ venv\Scripts\activate
 
 On Linux
 ```bash
-source myenv/bin/activate
+source venv/bin/activate
 ```
 
 On macOS
 ```bash
-source myenv/bin/activate
+source venv/bin/activate
 ```
 
 5 Install the required dependencies
