@@ -205,7 +205,7 @@ docker build -t discordbotimage .
    
 ![containerrunning](https://github.com/user-attachments/assets/9d65c4c1-8520-439a-a155-4cb15b9c6789)
 
-## 💡 Tip
+## 💡 Tips
 
 <div style="background-color: #eaffea; border-left: 6px solid #4CAF50; padding: 10px; margin: 10px 0;">
 
