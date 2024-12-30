@@ -190,7 +190,7 @@ Run the bot in a docker container
 > ⚠️ ** To create a Docker image, ensure you use the Docker file located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
 > All the dependencies in the requirements.txt file in the docker folder are compatible with the python:3.11-bullseye Docker image.**
 
-> ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder into a separate directory.**
+> ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder (dockerfile, requirements.txt) into a separate directory.**
 
 1. open the terminal navigate to the new isolated directory and run the bash code to create a docker image.
 ```bash
