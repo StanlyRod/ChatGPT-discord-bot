@@ -204,3 +204,5 @@ docker build -t discordbotimage .
 3. Docker container running successfully
    
 ![containerrunning](https://github.com/user-attachments/assets/9d65c4c1-8520-439a-a155-4cb15b9c6789)
+
+1. **Clone the repository:**
