@@ -101,7 +101,7 @@ pip install -r requirements.txt
 ```
 
 4 Set Environment Variables
-- Set the OPENAIKEY and DISCORDBOTKEY environment variables in your system and restart your computer.
+- Set the OPENAIKEY and DISCORDBOTKEY environmental variables, with their api key and token value in your system and restart your computer.
 
 Linux/Mac:
 ```bash
