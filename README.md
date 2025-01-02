@@ -8,7 +8,7 @@ This repository contains a Python-based Discord bot that integrates with OpenAI'
 - Responds to user prompts in Discord channels using OpenAI's GPT-4 model.
 - Handles errors gracefully, including OpenAI API errors and Discord message length limits.
 - Provides detailed error messages for common issues like exceeding token limits or rate limits.
-- Easy integration with environmental variables for secure API key management.
+- Easy integration with environmental variables and Docker container for secure API key management.
 
 ### Requirements
 
@@ -190,7 +190,7 @@ Run the bot in a docker container
 > ⚠️ ** To create a Docker image, ensure you use the Docker file located in the docker folder along with the requirements.txt file, which lists all the dependencies required to run the Python code.
 > All the dependencies in the requirements.txt file in the docker folder are compatible with the python:3.11-bullseye Docker image.**
 
-> ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder into a separate directory.**
+> ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder (dockerfile, requirements.txt) into a separate directory.**
 
 1. open the terminal navigate to the new isolated directory and run the bash code to create a docker image.
 ```bash
@@ -204,3 +204,12 @@ docker build -t discordbotimage .
 3. Docker container running successfully
    
 ![containerrunning](https://github.com/user-attachments/assets/9d65c4c1-8520-439a-a155-4cb15b9c6789)
+
+## 💡 Tips
+
+<div style="background-color: #eaffea; border-left: 6px solid #4CAF50; padding: 10px; margin: 10px 0;">
+
+- Tokens Response: To control the ChatGPT response, adjust the token limit specified in the code.
+- ChatGPT Model: By default, the code uses the gpt-4o model, which can be changed to your preferred model.
+
+</div>
