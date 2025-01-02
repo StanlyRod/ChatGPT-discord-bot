@@ -155,8 +155,8 @@ $env:DISCORDBOTKEY="your-discord-bot-key"
 ```bash
 python bot.py
 ```
-![run bot](https://github.com/user-attachments/assets/41d80bca-a2a6-459f-aee4-3b91597e7d53)
 
+![discordbotconnection](https://github.com/user-attachments/assets/27282ea3-64ad-429f-b835-ef1830940549)
 
 
 ### Important Notes
