@@ -109,6 +109,7 @@ copy requirements.txt venv\
 On Windows
 ```bash
 venv\Scripts\activate
+cd venv
 ```
 
 On Linux
@@ -121,7 +122,7 @@ On macOS
 source venv/bin/activate
 ```
 
-5 Install the required dependencies
+5 Navigate to the venv directory and install the required dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -150,13 +151,14 @@ $env:DISCORDBOTKEY="your-discord-bot-key"
 
 1. Create a python virtual environment, activate the virtual environment, install all the required dependencies.
 
-2. Run the bot
+2. Navigate to the venv directory and run the bot
 
 ```bash
 python bot.py
 ```
+![discordbotconnection](https://github.com/user-attachments/assets/eb7440ef-8ff8-4d2f-be06-89bd7e99f6ef)
 
-![discordbotconnection](https://github.com/user-attachments/assets/27282ea3-64ad-429f-b835-ef1830940549)
+
 
 
 ### Important Notes
