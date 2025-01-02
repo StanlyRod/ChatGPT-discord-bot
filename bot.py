@@ -3,7 +3,7 @@ import sys
 import requests
 import discord
 import gptobject as go
-
+import time
 
 
 # Get ChatGPT API KEY from the environmental variable
@@ -62,8 +62,10 @@ def discord_action():
                 # Generate a response using the ChatGPT language model
                 answer = go.chatgpt(sentence, endpoint, model, max_tokens, openaikey)
 
-                # Send the generated response to the Discord channel
-                await message.channel.send(answer)
+                for each_message in answer:
+                    await message.channel.send(each_message)
+                    #wait for 300 milliseconds
+                    time.sleep(0.3)
 
             except requests.HTTPError as e:
 
@@ -83,19 +85,19 @@ def discord_action():
 
     try:
         client.run(discordbotkey)
+    except discord.errors.PrivilegedIntentsRequired as e:
+        print(f"Error: Privileged intents are required but not enabled: {e}")
+        print("Please enable the required intents in the Discord Developer Portal.")
+        sys.exit(1)
     except discord.errors.LoginFailure as e:
         print(f"Login failed: {e}")
         print("Please check the Discord bot token. Ensure it's valid and correctly set in the environment variables.")
         sys.exit(1)
 
 
-
-
 def main():
     discord_action()
     
-
-
     
 if __name__ == "__main__":
     main()
