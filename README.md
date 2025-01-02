@@ -96,9 +96,11 @@ python -m venv venv
 ```
 
 3 Copy all the required files into the new virtual environment venv folder (bot.py, gptobject.py and requirements.txt).
-
+On windows Command Prompt
 ```bash
-cp bot.py gptobject.py requirements.txt venv/
+copy bot.py venv\
+copy gptobject.py venv\
+copy requirements.txt venv\
 ```
 
 4 Activate the virtual environment
