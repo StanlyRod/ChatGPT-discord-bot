@@ -149,9 +149,7 @@ $env:DISCORDBOTKEY="your-discord-bot-key"
 
 ### Usage
 
-1. Create a python virtual environment, activate the virtual environment, install all the required dependencies.
-
-2. Navigate to the venv directory and run the bot
+1. After restarting your computer, activate the virtual environment, navigate to the venv directory, and run the bot.py file.
 
 ```bash
 python bot.py
