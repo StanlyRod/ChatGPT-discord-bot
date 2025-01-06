@@ -1,23 +1,16 @@
 import os
 import sys
-import requests
 import discord
 import gptobject as go
-import time
+import httpx
+import asyncio
 
-
-# Get ChatGPT API KEY from the environmental variable
+#get openai api key and Discord bot token key from the environmental variables
 try:
     openaikey = os.environ["OPENAIKEY"]
-except KeyError as kee:
-    print(f"Error: The environment variable 'OPENAIKEY' is not set. Please set it and try again. {kee}")
-    sys.exit()
-
-#Get Discord bot token key from the environmental variable
-try:
     discordbotkey = os.environ["DISCORDBOTKEY"]
-except KeyError as ke:
-    print(f"Error: The environment variable 'DISCORDBOTKEY' is not set. Please set it and try again. {ke}")
+except KeyError as e:
+    print(f"Error: The environment variable '{e}' is not set correctly, please set it right and try again.")
     sys.exit()
 
 
@@ -31,73 +24,63 @@ model = "gpt-4o"
 max_tokens = 600
 
 
-
-def discord_action():
-
-    intents = discord.Intents.default()
-    intents.message_content = True
-
-    client = discord.Client(intents=intents)
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
 
 
-    #show loggin message
-    @client.event
-    async def on_ready():
-            print('We have logged in as {0.user}'.format(client))
+# On bot ready
+@client.event
+async def on_ready():
+    print(f"Bot has logged in as {client.user}")
 
 
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            return
+# Handling messages
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    # Check if the message starts with ">"
+    if message.content.startswith('>'):
+
+        # Extract the sentence by removing the leading ">" character
+        sentence = message.content[1:]
+        try:
+            # Call the async chatgpt function
+            answer = await go.chatgptAsync(sentence, endpoint, model, max_tokens, openaikey)
+
+            # Send the response in chunks
+            for msg in answer:
+                await message.channel.send(msg)
+                #wait for 300 milliseconds
+                await asyncio.sleep(0.3)
+
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 400:
+                await message.channel.send("Error: The user prompt exceeds the maximum tokens allowed.")
+            else:
+                await message.channel.send(f"An HTTP error occurred: {e.response.status_code}")
+
+        except discord.errors.HTTPException as e:
+            await message.channel.send(f"Discord HTTP Exception the response exceed 2000 characters try again with a different prompt: {e}")
         
-        # Check if the message content starts with ">"
-        if message.content.startswith('>'):
+        except Exception as e:
+            await message.channel.send(f"An unexpected error occurred: {e}")
+    else:
+        await message.channel.send("Every prompt need to start with a greater than sign '>'. Try again")
 
-            # Extract the sentence by removing the leading ">" character
-            sentence = message.content[1:]
 
-            try:
-                    
-                # Generate a response using the ChatGPT language model
-                answer = go.chatgpt(sentence, endpoint, model, max_tokens, openaikey)
-
-                for each_message in answer:
-                    await message.channel.send(each_message)
-                    #wait for 300 milliseconds
-                    time.sleep(0.3)
-
-            except requests.HTTPError as e:
-
-                if e.response.status_code == 400:
-                    await message.channel.send("Error: The user prompt exceeds the maximum tokens allowed.")
-                else:
-                    await message.channel.send(f"An HTTP error occurred: {e.response.status_code}")
-
-            except discord.errors.HTTPException as e:
-                await message.channel.send(f"Discord HTTP Exception the response exceed 2000 characters try again with a different prompt: {e}")
-
-            except Exception as e:
-                await message.channel.send(f"An unexpected error occurred: {e}")
-
-        else:
-            await message.channel.send("Every prompt need to start with a greater than sign '>'. Try again")
-
+async def main():
     try:
-        client.run(discordbotkey)
+        await client.start(discordbotkey)
     except discord.errors.PrivilegedIntentsRequired as e:
-        print(f"Error: Privileged intents are required but not enabled: {e}")
-        print("Please enable the required intents in the Discord Developer Portal.")
+        print(f"Error: Privileged intents are required. {e}")
         sys.exit(1)
     except discord.errors.LoginFailure as e:
         print(f"Login failed: {e}")
-        print("Please check the Discord bot token. Ensure it's valid and correctly set in the environment variables.")
         sys.exit(1)
 
 
-def main():
-    discord_action()
-    
-    
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
