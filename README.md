@@ -191,16 +191,18 @@ Run the bot in a docker container
 
 > ⚠️ ** Before creating a Docker image, make sure to isolate the Python files (bot.py, gptobject.py) along with all the files in the docker folder (dockerfile, requirements.txt) into a separate directory.**
 
-1. open the terminal navigate to the new isolated directory and run the bash code to create a docker image.
+1. Launch the docker desktop app
+
+2. open the terminal navigate to the new isolated directory and run the bash code to create a docker image.
 ```bash
 docker build -t discordbotimage .
 ```
 
-2. Run the docker image and provide the environment variables names with the openai api key and the discord bot token.
+3. Run the docker image and provide the environment variables names with the openai api key and the discord bot token.
 
 ![rundockerimg](https://github.com/user-attachments/assets/beb6dfa6-d4a8-44d6-82f0-78f81d516586)
 
-3. Docker container running successfully
+4. Docker container running successfully
    
 ![containerrunning](https://github.com/user-attachments/assets/9d65c4c1-8520-439a-a155-4cb15b9c6789)
 
