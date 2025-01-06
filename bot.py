@@ -21,7 +21,7 @@ endpoint = 'https://api.openai.com/v1/chat/completions'
 model = "gpt-4o"
 
 #response tokens
-max_tokens = 600
+max_tokens = 2000
 
 
 intents = discord.Intents.default()
