@@ -29,8 +29,8 @@ async def chatgptAsync(prompt:str, endpoint:str, model:str, max_tokens:int, open
                 'max_tokens': max_tokens
         }
 
-        #longer timeout duration 30 seconds
-        timeout = httpx.Timeout(30.0)
+        #longer timeout duration 120 seconds
+        timeout = httpx.Timeout(120.0)
 
         #HTTP client with a specified timeout
         async with httpx.AsyncClient(timeout=timeout) as client:

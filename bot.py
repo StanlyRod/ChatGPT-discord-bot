@@ -35,7 +35,7 @@ async def on_ready():
     print(f"Bot has logged in as {client.user}")
 
 
-# Handling messages
+# Handling messages with typing indicator
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -47,10 +47,13 @@ async def on_message(message):
         # Extract the sentence by removing the leading ">" character
         sentence = message.content[1:]
         try:
-            # Call the async chatgpt function
-            answer = await go.chatgptAsync(sentence, endpoint, model, max_tokens, openaikey)
 
-            # Send the response in chunks
+            async with message.channel.typing():
+
+                # Call the async chatgpt function
+                answer = await go.chatgptAsync(sentence, endpoint, model, max_tokens, openaikey)
+
+            # Send the response in chunks every 300 milliseconds
             for msg in answer:
                 await message.channel.send(msg)
                 #wait for 300 milliseconds
